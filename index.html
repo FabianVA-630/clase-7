@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>ELECTIVOS DE DISEÑO</title>
+        <style>
+            *, *::before, *::after {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+
+            :root {
+                --color-oscurisimo: hsl(270, 50%, 10%);
+                --color-oscuro: hsl(270, 50%, 30%);
+                --color-normal: hsl(270, 50%, 50%);
+                --color-iluminado: hsl(270, 50%, 70%);
+                --color-iluminadisimo: hsl(270, 50%, 90%);
+				--fuente-serifa
+				--fuente-palote
+            }
+
+            body {
+                font-family: Helvetica, Arial, sans-serif;
+                color: var(--color-normal);
+                text-align: center;
+                font-size: 100%;
+            }
+            div#contenedor {
+                margin: 1rem auto;
+                width: 90%;
+                max-width: 780px;
+            }
+
+            h1 {
+                margin: 1rem 0;
+                font-weight: 400;
+                font-size: calc(100% + 3vw + 3vh);
+            }
+
+            h2 {
+                margin: 3rem 0;
+                font-weight: 400;
+                letter-spacing: 0.25rem;
+                font-size: calc(100% + 1vw + 1vh);
+                color: var(--color-oscuro);
+            }
+
+            input {
+                border: 0.1rem solid var(--color-iluminado);
+                padding: 0.5rem 1rem;
+                font-family: inherit;
+                font-size: 15px;
+                color: var(--color-oscuro);
+                outline: none;
+                margin-bottom: 1.5rem;
+                width: 100%;
+                display: block;
+                background-image:  url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="purple"><path d="M85.72,82.81v10.7H5.53V11.22h5l6.76,9.22A2,2,0,0,1,18.81,20a2.76,2.76,0,0,1,2.71,2.83,2.64,2.64,0,0,1-2.09,2.59l1.84,6.51h.62a2.65,2.65,0,0,1,2.7,2.71,2.77,2.77,0,0,1-1.84,2.58L25,44.68a2.41,2.41,0,0,1,2.09-1.11,2.76,2.76,0,0,1,2.71,2.83,2.73,2.73,0,0,1-2.71,2.7h-.24c.73,1.11,2,2.71,3.44,4.56a2.72,2.72,0,0,1,5.29.86A2.62,2.62,0,0,1,33,57.22c.61.86,1.23,1.6,1.84,2.34a5.6,5.6,0,0,1,4.31-2.09,5.46,5.46,0,0,1,5.41,5.41,5.54,5.54,0,0,1-2.83,4.8,16.41,16.41,0,0,0,3.69,3.07,4.28,4.28,0,0,1-.12-1.23,5.41,5.41,0,1,1,9.47,3.69h4.06a2.24,2.24,0,0,1-.13-1,5.38,5.38,0,0,1,5.41-5.41,5.3,5.3,0,0,1,5.42,5.41,5.6,5.6,0,0,1-.62,2.46c1.48.49,3.08,1,4.68,1.6a8.87,8.87,0,0,1-.86-4.06,10.82,10.82,0,1,1,13,10.58ZM28.16,28.93a2.71,2.71,0,1,1,2.7,2.71A2.73,2.73,0,0,1,28.16,28.93Zm5.78,7.26a2.71,2.71,0,1,1-2.71,2.7A2.73,2.73,0,0,1,33.94,36.19Zm5.41,10a2.71,2.71,0,1,1,2.71,2.71A2.73,2.73,0,0,1,39.35,46.15Zm2.09-13.28a2.71,2.71,0,1,1,2.71,2.7A2.73,2.73,0,0,1,41.44,32.87Zm3.94,21.89a5.41,5.41,0,1,1,5.41,5.41A5.46,5.46,0,0,1,45.38,54.76Zm5.41-15a2.71,2.71,0,1,1,2.71,2.7A2.73,2.73,0,0,1,50.79,39.76Zm6.89,7.74a2.71,2.71,0,1,1,2.7,2.71A2.75,2.75,0,0,1,57.68,47.5Zm4.18,10.09a5.46,5.46,0,0,1,5.41-5.41,5.41,5.41,0,1,1,0,10.82A5.46,5.46,0,0,1,61.86,57.59Zm15-6a5.41,5.41,0,1,1,10.82,0,5.41,5.41,0,1,1-10.82,0Z"></path></svg>');
+                background-repeat: no-repeat;
+                background-size: 1rem;
+                background-position: 99% center;
+            }
+
+            input::placeholder {
+                color: var(--color-iluminado);
+            }
+
+            input:focus {
+                border-color: var(--color-normal);
+            }
+
+            div#contenedordetabla {
+                overflow-x: auto;
+                font-size: 90%;
+            }
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                text-align: left;
+                margin-bottom: 3rem;
+            }
+
+            thead {
+                background: var(--color-iluminado);
+            }
+
+            td,
+            th {
+                border: 1px solid var(--color-normal);
+                padding: 0.75rem;
+            }
+
+            td:nth-child(1),
+            th:nth-child(1),
+            td:nth-child(3),
+            th:nth-child(3) {
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="contenedor">
+            <h1>ᕙ( •̀ ᗜ •́ )ᕗ</h1>
+            <h2>ELECTIVOS DE DISEÑO</h2>
+
+            <input type="text" id="elInput" placeholder="Filtrar electivos…" />
+            <div id="contenedordetabla">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>N°</th>
+                            <th>Asignatura electiva</th>
+                            <th>Mención</th>
+                            <th>Grupo</th>
+                            <th>Enfoque</th>
+                        </tr>
+                    </thead>
+                    <tbody id="este"></tbody>
+                </table>
+            </div>
+            <small>Diseño y visualización de información</small>
+        </div>
+
+        <script>
+            const t = document.querySelector("#este");
+            const URL = "https://api.myjson.online/v1/records/7325f0a0-fa43-4e9b-bc5d-069ce1ca5c80";
+
+            fetch(URL)
+                .then((respuesta) => {
+                    if (!respuesta.ok) {
+                        throw new Error("Error HTTP: " + respuesta.status);
+                    }
+                    return respuesta.json();
+                })
+                .then((datos) => {
+                    var trabajo = datos.data;
+                    console.log(trabajo);
+                    trabajo.forEach((x) => {
+                        t.innerHTML += `<tr style="${x.ok == 1 ? "background-color: var(--color-iluminadisimo); color: var(--color-oscurisimo)" : ""}"><td>${x.id}</td><td>${x.name}</td><td>${x.track}</td><td>${x.group}</td><td>${x.focus}</td></tr>`;
+                    });
+                })
+                .catch((error) => {
+                    console.error("Algo salió mal:", error);
+                });
+
+            function sinAcentos(str) {
+                return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+            }
+
+            document.getElementById("elInput").addEventListener("keyup", function () {
+                const valor = sinAcentos(this.value.toLowerCase());
+                document.querySelectorAll("#este tr").forEach(function (fila) {
+                    fila.style.display = sinAcentos(fila.textContent.toLowerCase()).includes(valor) ? "" : "none";
+                });
+            });
+        </script>
+    </body>
+</html>
